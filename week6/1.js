@@ -11,12 +11,10 @@ function swap (A, i, j) {
   A[j] = tmp
 }
 function sort (A) {
-  A.sort()
-  return
+  // A.sort()
   let lo = 0,
       mid = 0,
       hi = A.length - 1
-
   while (mid <= hi) {
     switch (A[mid]) {
       case 0:
@@ -31,10 +29,12 @@ function sort (A) {
     }
   }
 }
-let arr = random(100000)
+let arr = random(10000000)
 console.time('start')
 sort(arr)
+
 console.timeEnd('start')
+console.log(test(arr))
 // console.log(arr)
 
 function random(count){
@@ -43,4 +43,12 @@ function random(count){
     arr.push(parseInt(Math.random()*3))
   }
   return arr
+}
+function test(A){
+  for(let i = 0 ; i < A.length ; i ++){
+    if(A[i] > A[i+1]){
+      return false
+    }
+  }
+  return true
 }
