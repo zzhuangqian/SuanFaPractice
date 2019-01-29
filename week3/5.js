@@ -20,4 +20,13 @@ in_array(A, 100) // false
 
 function in_array (A, x) {
   /// TODO
+  for(let i = 0 ; i < A.length ; i++){
+    let item = A[i]
+    for(let j = 0 ; j < item.length; j++ ){
+        if(x < item[j]){
+          return false
+        }
+    }
+  }
+
 }
